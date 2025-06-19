@@ -9,7 +9,7 @@ columns_of_interest = df.columns.difference(exclude_columns)
 summary_stats = df[columns_of_interest].agg(['mean', 'std'])
 
 print(summary_stats)
-print(summary_stats.index)  # This should print: Index(['mean', 'std'], dtype='object')
+print(summary_stats.index) 
 
 # Normalize using .loc
 df_normalized = df.copy()
@@ -22,5 +22,5 @@ for col in columns_of_interest:
     else:
         df_normalized[col] = 0
 
-# Added float_format to reduce file size
+
 df_normalized.to_csv("SensorTrainDataCleaned_Normalized15.csv", index=False, float_format="%.3f")
